@@ -1,33 +1,6 @@
 [
   {
     "type": "container",
-    "title": "Registry",
-    "description": "Docker image registry",
-    "categories": ["docker"],
-    "platform": "linux",
-    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
-    "image": "registry:latest",
-    "ports": [
-      "5000/tcp"
-    ],
-    "volumes": ["/var/lib/registry"]
-  },
-  {
-    "type": "container",
-    "title": "Nginx",
-    "description": "High performance web server",
-    "categories": ["webserver"],
-    "platform": "linux",
-    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/nginx.png",
-    "image": "nginx:latest",
-    "ports": [
-      "80/tcp",
-      "443/tcp"
-    ],
-    "volumes": ["/etc/nginx", "/usr/share/nginx/html"]
-  },
-  {
-    "type": "container",
     "title": "Httpd",
     "description": "Open-source HTTP server",
     "categories": ["webserver"],
@@ -682,46 +655,6 @@
     "ports": [
       "8080/tcp", "8443/tcp"
     ]
-  },
-  {
-    "type": "container",
-    "title": "ContentBox",
-    "description": "Open-source modular CMS",
-    "categories": ["CMS"],
-    "platform": "linux",
-    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/ortussolutions-contentbox.png",
-    "image": "ortussolutions/contentbox:latest",
-    "env": [
-      {
-        "name": "express",
-        "set": "true"
-      },
-      {
-        "name": "install",
-        "set": "true"
-      },
-      {
-        "name": "CFENGINE",
-        "set": "lucee@4.5"
-      }
-    ],
-    "ports": [
-      "8080/tcp", "8443/tcp"
-    ],
-    "volumes": ["/data/contentbox/db", "/app/includes/shared/media"]
-  },
-  {
-    "type": "stack",
-    "title": "Portainer Agent",
-    "description": "Manage all the resources in your Swarm cluster",
-    "note": "The agent will be deployed globally inside your cluster and available on port 9001.",
-    "categories": ["portainer"],
-    "platform": "linux",
-    "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/portainer.png",
-    "repository": {
-      "url": "https://github.com/portainer/templates",
-      "stackfile": "stacks/portainer-agent/docker-stack.yml"
-    }
   },
   {
     "type": "stack",
